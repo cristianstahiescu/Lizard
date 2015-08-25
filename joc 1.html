@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td {
+border: 1px solid black;
+}
+td {
+text-align: center;
+}
+</style>
+</head>
+<body>
+
+<h1> Alegeti </h1>
+
+<p>Apasati unul din butoane</p>
+
+<button type="button" onclick="foarfeca()"> Foarfeca </button>
+<button type="button" onclick="hartie()"> Hartie </button>
+<button type="button" onclick="piatra()"> Piatra </button>
+<button type="button" onclick="spock()"> Spock </button>
+<button type="button" onclick="soparla()"> Soparla </button>
+<p></p>
+<table style="width:30%">
+<tr>
+<td><p id="aleg1"></p></td>
+<td><p id="aleg2"></p></td>
+<td><p id="rezultat"></p></td>
+</tr>
+</table>
+
+
+
+<script>
+var joc = ["foarfeca", "hartie", "piatra", "spock", "soparla"];
+
+function foarfeca() {
+	var x = Math.floor((Math.random()*4)+1);
+	document.getElementById("aleg1").innerHTML = "foarfeca";
+	document.getElementById("aleg2").innerHTML = joc[x];
+	if (joc[x] == "hartie" || joc[x] == "soparla"){text = "ai castigat";}
+	else if(joc[x] == "foarfeca"){text = "egalitate";}
+	else {text = "ai pierdut";}
+	document.getElementById("rezultat").innerHTML = text;
+	x = "";
+	}
+	
+function hartie() {
+	var x = Math.floor((Math.random()*4)+1);
+	document.getElementById("aleg1").innerHTML = "hartie";
+	document.getElementById("aleg2").innerHTML = joc[x];
+	if (joc[x] == "piatra" || joc[x] == "spock"){text = "ai castigat";}
+	else if(joc[x] == "hartie"){text = "egalitate";}
+	else {text = "ai pierdut";}
+	document.getElementById("rezultat").innerHTML = text;
+	x = "";
+	}	
+	
+function piatra() {
+	var x = Math.floor((Math.random()*4)+1);
+	document.getElementById("aleg1").innerHTML = "piatra";
+	document.getElementById("aleg2").innerHTML = joc[x];
+	if (joc[x] == "foarfeca" || joc[x] == "soparla"){text = "ai castigat";}
+	else if(joc[x] == "piatra"){text = "egalitate";}
+	else {text = "ai pierdut";}
+	document.getElementById("rezultat").innerHTML = text;
+	x = "";
+	}
+	
+function spock() {
+	var x = Math.floor((Math.random()*4)+1);
+	document.getElementById("aleg1").innerHTML = "spock";
+	document.getElementById("aleg2").innerHTML = joc[x];
+	if (joc[x] == "piatra" || joc[x] == "foarfeca"){text = "ai castigat";}
+	else if(joc[x] == "spock"){text = "egalitate";}
+	else {text = "ai pierdut";}
+	document.getElementById("rezultat").innerHTML = text;
+	x = "";
+	}	
+	
+function soparla() {
+	var x = Math.floor((Math.random()*4)+1);
+	document.getElementById("aleg1").innerHTML = "soparla";
+	document.getElementById("aleg2").innerHTML = joc[x];
+	if (joc[x] == "hartie" || joc[x] == "spock"){text = "ai castigat";}
+	else if(joc[x] == "soparla"){text = "egalitate";}
+	else {text = "ai pierdut";}
+	document.getElementById("rezultat").innerHTML = text;
+	x = "";
+	}	
+	
+</script>
+
+</body>
+</html>
